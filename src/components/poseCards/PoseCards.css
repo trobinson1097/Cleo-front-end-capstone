@@ -1,0 +1,20 @@
+.pose {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: .25%;
+    border: 1px;
+    border-color: #C0FF00;
+    border-style: solid;
+}
+
+.image {
+    height: 100px;
+    width: auto;
+    border-color: #726EFF;
+    border-style: solid;
+}
+
+.enlish_pose {
+    text-align: left;
+}
