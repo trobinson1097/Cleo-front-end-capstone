@@ -9,6 +9,14 @@ export const PoseList = ({ searchTermState }) => {
     // const [openOnly, updateOpenOnly] = useState(false)
     const navigate = useNavigate()
 
+    const fetchedPoses = () => {
+        return fetch(`http://localhost:8088/poses`)
+            .then(response => response.json())
+            .then((poseArray) => {
+                setPoses(poseArray)
+            })
+    
+    }
     // get cleo user object out of local storage 
     //creat a string then convert to json using parse 
     const localCleoUser = localStorage.getItem("cleo_user")
@@ -25,28 +33,12 @@ export const PoseList = ({ searchTermState }) => {
         [ searchTermState ]
     )
 
-    // useEffect(
-    //     () => {
-    //         if (emergency) {
-    //             const emergencyTickets = poses.filter(pose => pose.emergency === true)
-    //             setFiltered(emergencyTickets)
-    //         }
-    //         else {
-    //             setFiltered(poses)
-    //         }
-    //     },
-    //     [emergency]
-    // )
 
+    
 
     useEffect(
         () => {
-            //console.log("Initial state of poses", poses) // View the initial state of poses
-            fetch(`http://localhost:8088/poses`)
-                .then(response => response.json())
-                .then((poseArray) => {
-                    setPoses(poseArray)
-                })
+           fetchedPoses() //console.log("Initial state of poses", poses) // View the initial state of poses
         },
         [] // When this array is empty, you are observing initial component state
     )
@@ -83,6 +75,11 @@ export const PoseList = ({ searchTermState }) => {
 
 return <>
 
+    
+    <>
+    <button onClick={() => navigate("/poses/create")} className="button">Create A New Pose Card</button>
+    </>
+
     <h2>List of Tickets</h2>
 
     <article className="poses">
@@ -90,9 +87,9 @@ return <>
             filteredPoses.map(
                 (pose) => {
                     return <section className="pose">
-                        <h1 class="english_pose">{pose.english_name}</h1>
+                        <h1 className="english_pose">{pose.english_name}</h1>
                         <header>{pose.sanskritName}</header>
-                        <img src={pose.img_url} class="image" />
+                        <img src={pose.img_url} className="image" />
                         {/* <footer>Emergency: {pose.emergency ? "YEE" : "no"}</footer> */}
                     </section>
                 }

@@ -7,9 +7,12 @@ export const TeacherNav = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/poses">All poses</Link>
+                <Link className="navbar__link" to="/poses/list">All poses</Link>
             </li>
 
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="home">Home</Link>
+            </li>
             {/* <li className="navbar__item active">
                 <Link className="navbar__link" to="/employees">Employees</Link>
             </li> */}

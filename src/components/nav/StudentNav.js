@@ -9,6 +9,10 @@ export const StudentNav = () => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/poses">All Poses</Link>
             </li>
+            
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/">Home</Link>
+            </li>
             {
                 localStorage.getItem("cleo_user")
                     ? <li className="navbar__item navbar__logout">
