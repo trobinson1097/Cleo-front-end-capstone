@@ -5,7 +5,9 @@ export const TeacherProfile = () => {
 
     
         return <> 
-        <h1>This is The Teacher profile</h1>
+        <h1>This is The Teacher Dashboard</h1>
+
+        
         </>
 
 }

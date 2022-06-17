@@ -1,6 +1,7 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { PoseForm } from "../poseCards/PoseForm"
 import { PoseList } from "../poseCards/PoseList"
+import { PoseSearch } from "../poseCards/PoseSearch"
 import { StudentProfile } from "../profile/StudentProfile"
 
 export const StudentViews = () => {
@@ -17,8 +18,11 @@ export const StudentViews = () => {
                 </>
             }>
                 <Route path="profile" element={ <StudentProfile />} />
+                
                 <Route path="poses" element={ <PoseList />} />
+                
 				<Route path="pose/create" element={ <PoseForm /> } />
+                
             </Route>
         </Routes>
     )

@@ -3,6 +3,8 @@ export const StudentProfile = () => {
         const cloeUserObject = JSON.parse(localCleoUser)
     
 
+
+
         if (cloeUserObject.student){
             // return emplyeeNav
             return <> </>
@@ -12,3 +14,4 @@ export const StudentProfile = () => {
             return <> </>
         }
     }
+

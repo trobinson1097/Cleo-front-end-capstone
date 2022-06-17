@@ -24,7 +24,8 @@ export const TeacherViews = () => {
                 </>
             }>
                 <Route path="home" element={<TeacherProfile />} />
-                <Route path="home" element={<PoseContainer />} />
+                <Route path="poses/list" element={<PoseContainer />} />
+
                 <Route path="poses/list" element={ <PoseList />} />
                 <Route path="poses/create" element={ <PoseForm /> } />
             </Route>
