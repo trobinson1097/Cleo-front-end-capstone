@@ -1,4 +1,3 @@
-import { queryAllByAltText } from "@testing-library/react"
 import { useEffect, useState } from "react"
 import { Outlet, useNavigate } from "react-router-dom"
 import "./PoseCards.css"
@@ -14,7 +13,7 @@ export const PoseList = ({ searchTermState }) => {
     const navigate = useNavigate()
 
     const fetchedPoses = () => {
-        return fetch(`http://localhost:8088/poses`)
+        return fetch(`http://localhost:8088/poses?_expand=level`)
             .then(response => response.json())
             .then((poseArray) => {
                 setPoses(poseArray)
@@ -31,14 +30,21 @@ export const PoseList = ({ searchTermState }) => {
             return <button onClick={() => deleteButtonFunction(pose)} className="pose__delete">DELETE</button>
         }
     }
-    
-    
+
+
     const deleteButtonFunction = (pose) => {
         return fetch(`http://localhost:8088/poses/${pose.id}`, {
             method: "DELETE"
         }).then(fetchedPoses)
     }
 
+    // const savePoseCard = (pose) => {
+    //     if (pose.userId === cleoUserObject.id) {
+    //         return <button onClick={() => deleteButtonFunction(pose)} className="pose__delete">DELETE</button>
+    //     }
+    // }
+
+    
     const handleSaveButtonClick = (event, poseId) => {
         event.preventDefault()
 
@@ -47,28 +53,25 @@ export const PoseList = ({ searchTermState }) => {
             userId: cleoUserObject.id,
             poseId: poseId
 
-        
+
         }
         // TODO: Perform the fetch() to POST the object to the API
-        fetch (`http://localhost:8088/savedPoseCards/`, {
+        fetch(`http://localhost:8088/savedPoseCards/`, {
             method: "POST",
             headers: {
-                "content-Type": "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(savePoseToApi)
         })
-        .then(response => response.json()) 
-        // .then(() => {
-        //     navigate("/")
-        // })
+            .then(response => response.json())
     }
-    
 
-    
+
+
     useEffect(
         () => {
             const searchedPoses = poses.filter(pose => {
-                return pose.sanskritName.toLowerCase().includes(searchTermState.toLowerCase())
+                return pose.english_name?.toLowerCase().includes(searchTermState?.toLowerCase())
             })
             setFiltered(searchedPoses)
         },
@@ -79,52 +82,52 @@ export const PoseList = ({ searchTermState }) => {
 
 
 
-useEffect(
-    () => {
-        fetchedPoses() //console.log("Initial state of poses", poses) // View the initial state of poses
-    },
-    [] // When this array is empty, you are observing initial component state
-)
+    useEffect(
+        () => {
+            fetchedPoses() //console.log("Initial state of poses", poses) // View the initial state of poses
+        },
+        [] // When this array is empty, you are observing initial component state
+    )
 
-useEffect(
-    () => {
-        setFiltered(poses)
-    },
-    [poses]
-)
+    useEffect(
+        () => {
+            setFiltered(poses)
+        },
+        [poses]
+    )
 
-return <>
+    return <>
 
 
-    <>
-        <button onClick={() => navigate("/poses/create")} className="button">Create A New Pose Card</button>
-    </>
+        <>
+            <button onClick={() => navigate("/poses/create")} className="button">Create A New Pose Card</button>
+        </>
 
-    <h2>List of Tickets</h2>
+        <h2>List of Tickets</h2>
 
-    <article className="poses">
-        {
-            filteredPoses.map(
-                (pose) => {
-                    return <section className="pose">
-                        <h1 className="english_pose">{pose.english_name}</h1>
-                        {/* <div>
+        <article className="poses">
+            {
+                filteredPoses.map(
+                    (pose) => {
+                        return <section className="pose">
+                            <h1 className="english_pose">{pose.english_name}</h1>
+                            {/* <div>
                             <button onClick={handleSavePose()}>Save to Dashboard</button>
                             {studentPoses && <div>Content</div>}
                         </div> */}
-                        <header>{pose.sanskritName}</header>
-                        <img src={pose.img_url} className="image" />
-                        {deletePoseCard(pose)}
-                        {/* <footer>Emergency: {pose.emergency ? "YEE" : "no"}</footer> */}
-                        <button
-                onClick={(clickEvent) => handleSaveButtonClick(clickEvent, pose.id )}
-                className="btn btn-primary">
-                Save To Dashboard
-            </button>
-                    </section>
-                }
-            )
-        }
-    </article>
-</>
+                            <header>{pose.sanskritName}</header>
+                            <img src={pose.img_url} className="image" />
+                            <footer>Pose Level: {pose.level?.name}</footer>
+                            {deletePoseCard(pose)}
+                            <button
+                                onClick={(clickEvent) => handleSaveButtonClick(clickEvent, pose.id)}
+                                className="btn btn-primary">
+                                Save To Dashboard
+                            </button>
+                        </section>
+                    }
+                )
+            }
+        </article>
+    </>
 }

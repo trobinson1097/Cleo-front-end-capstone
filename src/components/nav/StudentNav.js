@@ -11,7 +11,7 @@ export const StudentNav = () => {
             </li>
             
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/">Home</Link>
+                <Link className="navbar__link" to="/home">Home</Link>
             </li>
             {
                 localStorage.getItem("cleo_user")

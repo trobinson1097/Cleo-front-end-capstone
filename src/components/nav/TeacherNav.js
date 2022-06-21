@@ -13,13 +13,6 @@ export const TeacherNav = () => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="home">Home</Link>
             </li>
-            {/* <li className="navbar__item active">
-                <Link className="navbar__link" to="/employees">Employees</Link>
-            </li> */}
-
-            {/* <li className="navbar__item active">
-                <Link className="navbar__link" to="/customers">Customers</Link>
-            </li> */}
 
             {
                 localStorage.getItem("cleo_user")
