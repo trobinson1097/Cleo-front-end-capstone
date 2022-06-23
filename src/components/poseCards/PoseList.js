@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
-import { Outlet, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import "./PoseCards.css"
-import { SavedPoseCards } from "./SavedPoseCards"
 
 export const PoseList = ({ searchTermState }) => {
     const [poses, setPoses] = useState([])
     const [filteredPoses, setFiltered] = useState([])
-    const [studentPoses, savePoseCard] = useState()
+
 
 
 
@@ -44,7 +43,7 @@ export const PoseList = ({ searchTermState }) => {
     //     }
     // }
 
-    
+
     const handleSaveButtonClick = (event, poseId) => {
         event.preventDefault()
 
@@ -71,7 +70,8 @@ export const PoseList = ({ searchTermState }) => {
     useEffect(
         () => {
             const searchedPoses = poses.filter(pose => {
-                return pose.english_name?.toLowerCase().includes(searchTermState?.toLowerCase())
+                return pose.english_name?.toLowerCase().includes(searchTermState?.toLowerCase()) ||
+                pose.description?.toLowerCase().includes(searchTermState?.toLowerCase())
             })
             setFiltered(searchedPoses)
         },
@@ -103,7 +103,7 @@ export const PoseList = ({ searchTermState }) => {
             <button onClick={() => navigate("/poses/create")} className="button">Create A New Pose Card</button>
         </>
 
-        <h2>List of Tickets</h2>
+        {/* <h2>List of Tickets</h2> */}
 
         <article className="poses">
             {
@@ -117,7 +117,8 @@ export const PoseList = ({ searchTermState }) => {
                         </div> */}
                             <header>{pose.sanskritName}</header>
                             <img src={pose.img_url} className="image" />
-                            <footer>Pose Level: {pose.level?.name}</footer>
+                            <h2>Pose Level: {pose.level?.name}</h2>
+                            <p>{pose.description}</p>
                             {deletePoseCard(pose)}
                             <button
                                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent, pose.id)}

@@ -7,11 +7,13 @@ body,
 button,
 input,
 select,
-textarea {
-  color: #000000;
+textarea,
+p,
+div {
+  color: #0d2137;
   font-family: 'Nanum Gothic Coding', monospace;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.25;
   
 }
 
@@ -23,6 +25,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Nanum Gothic Coding', monospace;
   letter-spacing: 2px;
+
 }
 
 p {

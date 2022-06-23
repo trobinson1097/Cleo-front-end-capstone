@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react"
 
-export const StudentProfile = () => {
+export const StudentProfile = ({searchTermState}) => {
         const localCleoUser = localStorage.getItem("cleo_user")
         const cleoUserObject = JSON.parse(localCleoUser)
         const [poses, setPoses] = useState ([])
         const [studentPose, savedStudentPose] = useState ([])
-        const [remove, removePose ] = useState ([])
-
-
         
 
-        const deletePoseCard = (pose) => {
+        
+        
+
+        const deletePoseCard = (pose,) => {
             if (pose.userId === cleoUserObject.id) {
                 return <button onClick={() => deleteButtonFunction(pose)} className="pose__delete">remove from profile</button>
             }
@@ -27,7 +27,6 @@ export const StudentProfile = () => {
             })
         }
         
-
 
         useEffect(
         () => {
@@ -54,6 +53,17 @@ export const StudentProfile = () => {
             // observing array being watched for changes
             [poses]
         )
+
+        useEffect(
+            () => {
+                const searchedPoses = poses.filter(pose => {
+                    return pose.english_name?.toLowerCase().includes(searchTermState?.toLowerCase()) ||
+                    pose.description?.toLowerCase().includes(searchTermState?.toLowerCase())
+                })
+                setPoses(searchedPoses)
+            },
+            [searchTermState]
+        )
         return <>
         
         <article className="poses">
@@ -62,8 +72,10 @@ export const StudentProfile = () => {
                     (pose) => {
                         return <section className="pose">
                             <h1 className="english_pose">{pose?.pose?.english_name}</h1>
-                            <header>{pose.sanskritName}</header>
+                            <header>{pose.pose?.sanskritName}</header>
+                            {/* <p>{pose.description}</p> */}
                             <img src={pose.pose?.img_url} className="image" />
+                            <p>{pose.pose?.description}</p>
                             {deletePoseCard(pose)}
                         </section>
                     }

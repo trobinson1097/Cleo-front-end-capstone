@@ -83,7 +83,7 @@ export const Register = (props) => {
                 </fieldset>
             </form>
             <section className="link--register">
-                <Link to="/login">Join Cleo</Link>
+                <Link to="/login">Have an account?</Link>
             </section>
         </main>
     )
