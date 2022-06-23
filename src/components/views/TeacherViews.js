@@ -15,11 +15,11 @@ export const TeacherViews = () => {
             <Route path="/" element={
                 <>
                     <div>
-                        <h1>Cleo</h1>
+                        <h1>CLEO</h1>
                         <h2>Yoga for Everyone</h2>
+                        <h3>Welocome</h3>
                     </div>
-                    <div>Welcome to your profile <br /> Here is where you will find your Pose Cards</div>
-
+                
                     <Outlet />
                 </>
             }>

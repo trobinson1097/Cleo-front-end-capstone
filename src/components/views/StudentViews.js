@@ -3,23 +3,26 @@ import { PoseForm } from "../poseCards/PoseForm"
 import { PoseList } from "../poseCards/PoseList"
 import { StudentProfile } from "../profile/StudentProfile"
 import { PoseContainer } from "../poseCards/PoseContainer"
-export const StudentViews = () => {
+export const StudentViews = ({searchTermState}) => {
 	return (
         <Routes>
             <Route path="/" element={
                 <>
                     <div>
-                        <h1>Cleo</h1>
+                        <h1>CLEO</h1>
                         <h2>Yoga for Everyone</h2>
                     </div>
-                    <div>Welcome to your profile <br /> Here is where you will find your Pose Cards</div>
+                    <article>
+
+                    </article>
                     <Outlet />
                 </>
             }>
+
+                <Route path="poses" element={ <PoseList />} />
                 <Route path="poses/list" element={<PoseContainer />} />
                 <Route path="home" element={ <StudentProfile />} />
                 
-                <Route path="poses" element={ <PoseList />} />
                 
 				{/* <Route path="pose/create" element={ <PoseForm /> } /> */}
                 

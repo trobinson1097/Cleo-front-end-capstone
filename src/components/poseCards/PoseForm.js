@@ -11,6 +11,7 @@ export const PoseForm = () => {
         sanskirtName: "",
         english_name: "",
         img_url: "",
+        description: "",
         levelId: 0
     })
 
@@ -43,6 +44,7 @@ export const PoseForm = () => {
             userId: cleoUserObject.id,
             sanskritName: pose.sanskritName,
             english_name: pose.english_name,
+            description: pose.description,
             levelId: pose.levelId,
             img_url: pose.img_url,
         }
@@ -106,6 +108,25 @@ export const PoseForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
+                    <label htmlFor="description">Description:</label>
+                    <input
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder=" Pose description "
+                        //seting a value for the form field for initial state 
+                        value={pose.description}
+                        onChange={
+                            (evt) => {
+                                const copy = { ...pose }
+                                copy.description = evt.target.value
+                                update(copy)
+                            }
+                        } />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
                     <label htmlFor="img_url">Image URL:</label>
                     <input
                         required autoFocus
@@ -152,6 +173,7 @@ export const PoseForm = () => {
                     {
                         sanskirtName: "",
                         english_name: "",
+                        description: "",
                         img_url: "",
                         level: ""
                     }
