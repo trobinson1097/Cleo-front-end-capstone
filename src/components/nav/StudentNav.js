@@ -5,18 +5,22 @@ export const StudentNav = () => {
     const navigate = useNavigate()
 
     return (
-        <div id="mySidebar" className="sidebar">
+<nav>
+      <div className="navicon">
+          <div></div>
+      </div>
         <ul className="navbar">
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/poses">All Poses</Link>
+                <Link className="navbar__link" to="/poses">All poses</Link>
             </li>
-            
+
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/home">Dashboard</Link>
+                <Link className="navbar__link" to="/dashboard">Dashboard</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/">Home</Link>
+                <Link className="navbar__link" to="">Home</Link>
             </li>
+
             {
                 localStorage.getItem("cleo_user")
                     ? <li className="navbar__item navbar__logout">
@@ -27,7 +31,7 @@ export const StudentNav = () => {
                     </li>
                     : ""
             }
-        </ul>
-        </div>
+            </ul>
+        </nav>
     )
 }

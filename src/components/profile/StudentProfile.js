@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export const StudentProfile = ({searchTermState}) => {
+export const StudentProfile = () => {
         const localCleoUser = localStorage.getItem("cleo_user")
         const cleoUserObject = JSON.parse(localCleoUser)
         const [poses, setPoses] = useState ([])
@@ -10,7 +10,7 @@ export const StudentProfile = ({searchTermState}) => {
         
         
 
-        const deletePoseCard = (pose,) => {
+        const deletePoseCard = (pose) => {
             if (pose.userId === cleoUserObject.id) {
                 return <button onClick={() => deleteButtonFunction(pose)} className="pose__delete">remove from profile</button>
             }
@@ -54,16 +54,7 @@ export const StudentProfile = ({searchTermState}) => {
             [poses]
         )
 
-        useEffect(
-            () => {
-                const searchedPoses = poses.filter(pose => {
-                    return pose.english_name?.toLowerCase().includes(searchTermState?.toLowerCase()) ||
-                    pose.description?.toLowerCase().includes(searchTermState?.toLowerCase())
-                })
-                setPoses(searchedPoses)
-            },
-            [searchTermState]
-        )
+        
         return <>
         
         <article className="poses">

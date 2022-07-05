@@ -71,7 +71,7 @@ export const PoseList = ({ searchTermState }) => {
         () => {
             const searchedPoses = poses.filter(pose => {
                 return pose.english_name?.toLowerCase().includes(searchTermState?.toLowerCase()) ||
-                pose.description?.toLowerCase().includes(searchTermState?.toLowerCase())
+                pose.description?.toLowerCase().includes(searchTermState?.toLowerCase()) 
             })
             setFiltered(searchedPoses)
         },
@@ -96,14 +96,18 @@ export const PoseList = ({ searchTermState }) => {
         [poses]
     )
 
+
+
     return <>
-
-
-        <>
-            <button onClick={() => navigate("/poses/create")} className="button">Create A New Pose Card</button>
+{
+    cleoUserObject.teacher
+        ?<>
+            <button onClick={() => navigate("/poses/create")} className="create_button">Create A New Pose Card</button>
         </>
-
-        {/* <h2>List of Tickets</h2> */}
+        :<>
+        </>
+}
+        <h2>List of Poses</h2>
 
         <article className="poses">
             {
@@ -111,13 +115,9 @@ export const PoseList = ({ searchTermState }) => {
                     (pose) => {
                         return <section className="pose">
                             <h1 className="english_pose">{pose.english_name}</h1>
-                            {/* <div>
-                            <button onClick={handleSavePose()}>Save to Dashboard</button>
-                            {studentPoses && <div>Content</div>}
-                        </div> */}
-                            <header>{pose.sanskritName}</header>
                             <img src={pose.img_url} className="image" />
                             <h2>Pose Level: {pose.level?.name}</h2>
+                            <header>{pose.sanskritName}</header>
                             <p>{pose.description}</p>
                             {deletePoseCard(pose)}
                             <button

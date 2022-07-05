@@ -1,14 +1,6 @@
 html, body {
     margin: 0;
     height: 100%;
-
-}
-
-
-input {
-margin: 1%;
-
-
 }
 article{
     display: flex;
@@ -50,6 +42,8 @@ article{
         padding: 5%;
         border-color: #bbd444;
         border-style: inherit;
+        border-radius: 10px;
+
     }
 
 
@@ -67,7 +61,7 @@ article{
         border-radius: 50px;
 
     }
-    .navbar{
+    /* .navbar{
         display: flex;
         flex-wrap: wrap;
         border-color: #ff8e2b;
@@ -76,7 +70,7 @@ article{
         padding: 1%;
         box-shadow: 5px 5px 20px #e3874f;
         background-color: #e0eaf5;
-    }
+    } */
 
     .landing-div{
         display: flex;
@@ -87,4 +81,23 @@ article{
         padding: 350px;
     }
 
+.poseSearch{
+    display: flex;
+    flex-direction: row-reverse;
+
+
+    align-items: flex-end;
+}
+
+
+.app_title{
+    padding: 25px;
+    margin: 45px;
+    border: #2e77ae;
+    border-style: solid;
+    border-radius: 45px;
+}
+
+.create_button{
     
+}

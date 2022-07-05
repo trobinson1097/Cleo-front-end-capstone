@@ -11,7 +11,8 @@ h3{
 html, body {
     margin: 0%;
     height:300%;
-    background: radial-gradient( circle farthest-corner at -8.9% 51.2%,  rgba(255,124,0,1) 0%, rgba(255,124,0,1) 15.9%, rgba(255,163,77,1) 15.9%, rgba(255,163,77,1) 24.4%, #e0eaf5 24.5%, #e0eaf5 66% );
+    background-attachment: fixed;
+    background-image: radial-gradient( circle farthest-corner at -8.9% 51.2%,  rgba(255,124,0,1) 0%, rgba(255,124,0,1) 15.9%, rgba(255,163,77,1) 15.9%, rgba(255,163,77,1) 24.4%, #e0eaf5 24.5%, #e0eaf5 66% );
     /* background-image: linear-gradient(to right, #bdc3c7, #a7836d 100%);
     background-color: #C0C0C0; */
 }
@@ -47,9 +48,10 @@ form {
 }
 
 .form--login {
-    border-radius:15%;
+    border-radius:50px;
     display: inline-block;
     margin: 65px;
+    margin-top: 200px;
     padding: 65px;
     text-align: center;
     box-shadow: 20px 20px 50px #94b0b7;
