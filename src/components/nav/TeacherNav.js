@@ -11,14 +11,15 @@ export const TeacherNav = () => {
       </div>
         <ul className="navbar">
             <li className="navbar__item active">
+                <Link className="navbar__link" to="">Home</Link>
+            </li>
+            
+            <li className="navbar__item active">
                 <Link className="navbar__link" to="/poses">All poses</Link>
             </li>
 
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/dashboard">Dashboard</Link>
-            </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="">Home</Link>
             </li>
 
             {

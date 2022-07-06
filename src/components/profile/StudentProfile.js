@@ -56,12 +56,13 @@ export const StudentProfile = () => {
 
         
         return <>
-        
+        <div className="saved_pose_container">
+            <h1 className="student_dash">Your Poses</h1>
         <article className="poses">
             {
                 studentPose.map(
                     (pose) => {
-                        return <section className="pose">
+                        return <section className="saved_pose">
                             <h1 className="english_pose">{pose?.pose?.english_name}</h1>
                             <header>{pose.pose?.sanskritName}</header>
                             {/* <p>{pose.description}</p> */}
@@ -73,7 +74,7 @@ export const StudentProfile = () => {
                 )
             }
         </article>
-        
+        </div>
         </>
     }
 

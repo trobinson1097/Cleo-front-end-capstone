@@ -1,0 +1,17 @@
+.resources{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.resource_link{
+    margin: 0;
+    padding: 5px;
+}
+
+.resource_desc{
+    margin: ;
+    padding: 5px;
+    margin-left: 50%;
+}

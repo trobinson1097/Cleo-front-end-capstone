@@ -1,0 +1,33 @@
+.home{
+    padding: 50px;
+}
+.app_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.app_title{
+    padding: 25px;
+    margin: 45px;
+    border: #2e77ae;
+    border-style: solid;
+    border-radius: 45px;
+}
+.home_image{
+    height: 200px;
+    width: auto;
+}
+
+.poseImage{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.cleo_welcome{
+    padding: 10px;
+}

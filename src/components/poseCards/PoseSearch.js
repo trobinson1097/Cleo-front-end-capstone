@@ -1,6 +1,7 @@
 export const PoseSearch = ({setterFunction}) => {
     return (
-        <div>
+        <div className="wrap">
+            <form className="searchPose">
         <input className="poseSearch"
         onChange={
             (changeEvent) => {
@@ -8,6 +9,8 @@ export const PoseSearch = ({setterFunction}) => {
             }
         }
             type="text" placeholder="Search Poses" />
+            <span className="caret"></span>
+            </form>
         </div>
     )
 }

@@ -99,15 +99,16 @@ export const PoseList = ({ searchTermState }) => {
 
 
     return <>
+        <h2>POSES
+        </h2>
 {
     cleoUserObject.teacher
         ?<>
-            <button onClick={() => navigate("/poses/create")} className="create_button">Create A New Pose Card</button>
+            <button onClick={() => navigate("/poses/create")} className="create_button"></button>
         </>
         :<>
         </>
 }
-        <h2>List of Poses</h2>
 
         <article className="poses">
             {

@@ -32,72 +32,150 @@ article{
 .image {
     height: 200px;
     width: auto;
-    /* border-color: #726EFF;
-    border-style: solid; */
 }
 
 
-    p{
-        margin: 1%;
-        padding: 5%;
-        border-color: #bbd444;
-        border-style: inherit;
-        border-radius: 10px;
-
-    }
 
 
 
-    .poseForm{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 20px 25px;
-        padding: 10px;
-        /* border-radius: 50%; */
-        border-style: solid;
-        border-color: #ff8e2b;
-        border-width: 10px;
-        border-radius: 50px;
-
-    }
-    /* .navbar{
-        display: flex;
-        flex-wrap: wrap;
-        border-color: #ff8e2b;
-        border-radius: 5px;
-        margin: 1%;
-        padding: 1%;
-        box-shadow: 5px 5px 20px #e3874f;
-        background-color: #e0eaf5;
-    } */
-
-    .landing-div{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: baseline;
-        margin: auto;
-        padding: 350px;
-    }
-
-.poseSearch{
+.poseForm{
     display: flex;
-    flex-direction: row-reverse;
-
-
-    align-items: flex-end;
-}
-
-
-.app_title{
-    padding: 25px;
-    margin: 45px;
-    border: #2e77ae;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 25px;
+    padding: 10px;
     border-style: solid;
-    border-radius: 45px;
+    border-color: #ff8e2b;
+    border-width: 10px;
+    border-radius: 50px;
+    
 }
 
-.create_button{
+.landing-div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin: auto;
+    padding: 350px;
+}
+
+
+.saved_pose{
+    display: flex;
+    backdrop-filter: grayscale(0.5), opacity(0.8);
+    align-items: center;
+    flex-direction: column;
+    background-color: #e0eaf5;
+    margin: 20px 25px;
+    padding: 10px;
+    width: 375px;
+    height: auto;
+    border: 1px;
+    border-radius: 50px;
+    border-color: #ff8e2b;
+    border-style: solid;
+    border-width: 10px;
+    box-shadow: 10px 10px 25px #e3874f;
+}
+
+.wrap {
+    width: 400px;
+}
+/* form.searchPose{
+    display: flex;
+    align-self: flex-end;
+} */
+
+
+input.poseSearch{
     
+    padding-top: 64px;
+    margin: 30px;
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+    width: 50%;
+    padding: 12px 24px;
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    color: #575756;
+    background-color: transparent;
+    /* *background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% center;
+    border-radius: 50px;
+    border: 3px solid #ff8e2b;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    
+    
+    color: color(#575756 a(0.8));
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.poseSearch:hover,focus {
+    padding: 12px 0;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #575756;
+    border-radius: 0;
+    background-position: 100% center;
+}
+
+
+
+
+.create_button {
+    border: 2px solid lightgrey;
+	background-color: #fff;
+	font-size: 16px;
+	height: 2.5em;
+	width: 2.5em;
+	border-radius: 999px;
+	position: relative;
+}
+
+.create_button:after,
+.create_button:before {
+    content: "";
+    display: block;
+    background-color: grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.create_button:before {
+    height: 1em;
+    width: 0.2em;
+}
+
+.create_button:after {
+    height: 0.2em;
+    width: 1em;
+}
+
+
+.saved_pose_container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+p{
+    margin: 1%;
+    padding: 5%;
+    border-color: #3b99ba;
+    border-style: inherit;
+    border-radius: 10px;
+
 }
