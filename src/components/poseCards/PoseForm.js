@@ -62,7 +62,7 @@ export const PoseForm = () => {
         })
         .then(response => response.json()) 
         .then(() => {
-            navigate("/poses/list")})
+            navigate("/poses")})
     }
 
     return (
