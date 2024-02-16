@@ -1,5 +1,6 @@
 # Cleo
 
+“Yoga is the journey of the self, through the self, to the self.” ― The Bhagavad Gita
 
 ## Description
 
