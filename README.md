@@ -9,7 +9,7 @@ The inspiration for the name of this application is my dog, Cleo. She is a very 
 
 Why a yoga app?
 
-As an aspiring Yoga Teacher, I feel blessed for all of the benefits I have received on and off of the mat. I wish that this highly effective and beneficial practice was more accessible to communities that are underrepresented and underserved, communities I believe could benefit the most from yoga. I made Cleo scalable so that this dream of mine can come true, with resources and ease of access, I hope you enjoy my super simple and straightforward take on a resource application. 
+As a Yoga Teacher in training, I feel blessed for all of the benefits I have received on and off of the mat. I wish that this highly effective and beneficial practice was more accessible to communities that are underrepresented and underserved, communities I believe could benefit the most from yoga. I made Cleo scalable so that this dream of mine can come true, with resources and ease of access, I hope you enjoy my super simple and straightforward take on a resource application. 
 
 ## Features
 
